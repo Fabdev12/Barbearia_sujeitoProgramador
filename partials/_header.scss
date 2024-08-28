@@ -1,0 +1,81 @@
+
+header{
+    width: 100%;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+i{
+    color: $white-normal;
+}
+
+.header-icons{
+    display: flex;
+    gap: 14px;
+}
+//animação dos icones no header
+.header-icons a:hover{
+    i{
+        animation: translateY 0.7s infinite alternate;
+        color: $red-light;
+    }
+}
+
+@keyframes translateY {
+    from{
+        transform: translateY(0) scale(1);
+    }
+    to{
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+//Estilização do botão com animação
+.header-button{
+    border: 1px solid $white-normal;
+    padding: 8px 24px;
+    border-radius: 4px;
+    color: $white-normal;
+    background-color: transparent;
+    transition: background-color 0.7s;
+}
+
+.header-button:hover{
+    border: 1px solid $red-light;
+    background-color: $red-light;
+}
+
+//alinhamento da logo
+.header-logo{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-top: 14px;
+}
+
+//respondividade do header
+@media screen and (max-width: 768px) {
+    .header-content{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        i{
+            margin-top: 16px;
+            font-size: 34px;
+        }
+    }
+    .header-logo img{
+        width: 160px;
+        margin-top: 45px;
+    }
+
+    .header-button{
+        display: none;
+    }
+}
